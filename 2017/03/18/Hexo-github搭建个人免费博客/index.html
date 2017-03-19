@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="https://lindongxiao.github.io">
   <title>Hexo+github搭建个人免费博客 | 小楼昨夜好大风的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexo+github搭建个人免费博客1. 第一步">
+  <meta name="description" content="Hexo+github搭建个人免费博客">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo+github搭建个人免费博客">
 <meta property="og:url" content="https://lindongxiao.github.io/2017/03/18/Hexo-github搭建个人免费博客/index.html">
 <meta property="og:site_name" content="小楼昨夜好大风的博客">
-<meta property="og:description" content="Hexo+github搭建个人免费博客1. 第一步">
-<meta property="og:updated_time" content="2017-03-18T11:23:55.000Z">
+<meta property="og:description" content="Hexo+github搭建个人免费博客">
+<meta property="og:updated_time" content="2017-03-19T16:03:20.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github搭建个人免费博客">
-<meta name="twitter:description" content="Hexo+github搭建个人免费博客1. 第一步">
+<meta name="twitter:description" content="Hexo+github搭建个人免费博客">
   
     <link rel="alternative" href="/atom.xml" title="小楼昨夜好大风的博客" type="application/atom+xml">
   
@@ -177,7 +177,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Hexo-github搭建个人免费博客"><a href="#Hexo-github搭建个人免费博客" class="headerlink" title="Hexo+github搭建个人免费博客"></a>Hexo+github搭建个人免费博客</h1><h3 id="1-第一步"><a href="#1-第一步" class="headerlink" title="1. 第一步"></a>1. 第一步</h3>
+        <p>之前一直都是把一些东西记到有道云笔记里面，这几天心血来潮，想把笔记什么的都记录到博客里面，于是就遇上了hexo～～说实话，hexo也是挺方便的，写完就发布，而且样式挺好看的，最主要的还是免费，免费，免费～哈哈哈～打算把有道云部分笔记也移到这里来，方便查找和分享<br><a id="more"></a></p>
+<h3 id="注册Github账号"><a href="#注册Github账号" class="headerlink" title="注册Github账号"></a>注册Github账号</h3><p>首先你得有一个github的账号，大家可自行到<a href="https://github.com" target="_blank" rel="external">github</a>官网去注册，注册成功之后登录github，新建一个代码仓库</p>
+<h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>作用：用来生成静态页面的</p>
+<ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js官网</a></li>
+</ul>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>作用：把本地的hexo内容提交到github上去</p>
+<ul>
+<li><a href="https://git-scm.com/downloads" target="_blank" rel="external">git官网</a></li>
+</ul>
+<h3 id="安装配置hexo"><a href="#安装配置hexo" class="headerlink" title="安装配置hexo"></a>安装配置hexo</h3><ol>
+<li>创建一个目录用于存放hexo相关文件<code>mkdir blog</code></li>
+<li>进入blog目录执行<code>npm install -g hexo</code></li>
+<li>初始化hexo<code>hexo init</code>，至此，全部安装工作已经完成！blog就是你的博客根目录，所有的操作都在里面进行</li>
+<li>新建一篇文章<code>hexo new &quot;title&quot;</code>，hexo会帮我们在_posts下生成相关md文件，当然你也可以直接自己新建md文件，用这个命令的好处是帮我们自动生成了时间</li>
+<li>生成静态页面至public目录<code>hexo generate</code>或<code>hexo g</code></li>
+<li>开启预览访问端口（默认端口4000，’ctrl + c’关闭server）即可本地浏览内容啦～<code>hexo server</code>或<code>hexo s</code></li>
+<li>部署到Github<code>hexo deploy</code>或<code>hexo d</code>到此为止，已经部署完毕，试试访问yourname.github.io看看你的博客吧～ <strong>（yourname是你github的用户名）</strong></li>
+</ol>
+<ul>
+<li><p>你还可以使用组合命令快速部署到Github：</p>
+<ul>
+<li><code>hexo s -g</code>生成并本地预览</li>
+<li><code>hexo d -g</code>生成并上传 </li>
+</ul>
+</li>
+<li><p>小技巧</p>
+<ul>
+<li><code>hexo s -g</code>生成并本地预览</li>
+<li><code>hexo d -g</code>生成并上传 </li>
+<li>markdown默认情况下，生成的博文目录会显示全部的文章内容，可以在合适的位置加上<code>&lt;!--more--&gt;</code>不显示全部内容</li>
+</ul>
+</li>
+</ul>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><ul>
+<li>配置文件位于blog目录下面的<strong>_config.yml</strong>，我们只需要改几项常用的配置即可</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 网站相关信息</div><div class="line">title: inerdstack	#博客名称</div><div class="line">subtitle: the stack of it nerds #副标题</div><div class="line">description: start from zero #简介</div><div class="line">author: inerdstack #作者</div><div class="line">language: zh-CN #语言</div><div class="line">timezone: Asia/Shanghai #时区</div><div class="line"></div><div class="line">#发布设置</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/iNerdStack/inerdstack.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
       
 
       
@@ -206,7 +243,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/环境搭建/" class="article-tag-list-link color5">环境搭建</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -268,16 +335,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-  
-    <a href="/2017/03/18/Test/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 
 
@@ -374,6 +431,18 @@
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">博客</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
