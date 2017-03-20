@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://lindongxiao.github.io/2017/03/18/Hexo-github搭建个人免费博客/index.html">
 <meta property="og:site_name" content="小楼昨夜好大风的博客">
 <meta property="og:description" content="Hexo+github搭建个人免费博客">
-<meta property="og:updated_time" content="2017-03-19T16:03:20.000Z">
+<meta property="og:updated_time" content="2017-03-20T11:41:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github搭建个人免费博客">
 <meta name="twitter:description" content="Hexo+github搭建个人免费博客">
@@ -46,7 +46,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="null" class="js-avatar">
+			<img src="/img/avatar.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Liem</a></h1>
@@ -60,7 +60,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/环境搭建/">环境搭建</a></li>
 	        
 			</ul>
 		</nav>
@@ -82,13 +82,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/lindongxiao" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weibo" target="_blank" href="http://weibo.com/p/1005052116658963/home?from=page_100505&mod=TAB#place" title="weibo"><i class="icon-weibo"></i></a>
 		        
 			</div>
 		</nav>
@@ -106,7 +102,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="null" class="js-avatar">
+				<img src="/img/avatar.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Liem</h1>
@@ -125,13 +121,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/lindongxiao" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1005052116658963/home?from=page_100505&mod=TAB#place" title="weibo"><i class="icon-weibo"></i></a>
 			        
 				</div>
 			</nav>
@@ -142,7 +134,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 50%"><a href="/categories/环境搭建/">环境搭建</a></li>
 		        
 				</ul>
 			</nav>
@@ -215,6 +207,23 @@
 <li>配置文件位于blog目录下面的<strong>_config.yml</strong>，我们只需要改几项常用的配置即可</li>
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 网站相关信息</div><div class="line">title: inerdstack	#博客名称</div><div class="line">subtitle: the stack of it nerds #副标题</div><div class="line">description: start from zero #简介</div><div class="line">author: inerdstack #作者</div><div class="line">language: zh-CN #语言</div><div class="line">timezone: Asia/Shanghai #时区</div><div class="line"></div><div class="line">#发布设置</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/iNerdStack/inerdstack.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<h3 id="更新于20170320"><a href="#更新于20170320" class="headerlink" title="更新于20170320"></a>更新于20170320</h3><ul>
+<li>主题推荐及使用<ul>
+<li>本博客使用的是yilia主题，Yilia 是为 hexo 2.4+制作的主题。 崇尚简约优雅，以及极致的性能。</li>
+<li>使用<ul>
+<li><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></li>
+<li>修改hexo根目录下的 _config.yml ： <code>theme: yilia</code></li>
+<li>更新 <code>cd themes/yilia</code> <code>git pull</code></li>
+</ul>
+</li>
+<li>配置<ul>
+<li>可参考主题作者的<a href="https://github.com/litten/BlogBackup" target="_blank" rel="external">博客备份</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
       
 
       
@@ -227,7 +236,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持！<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -524,7 +533,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">一个PHP工程师</div>
   	  	
     	</section>
     
