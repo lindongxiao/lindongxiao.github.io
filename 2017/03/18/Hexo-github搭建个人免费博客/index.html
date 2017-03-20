@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://lindongxiao.github.io/2017/03/18/Hexo-github搭建个人免费博客/index.html">
 <meta property="og:site_name" content="小楼昨夜好大风的博客">
 <meta property="og:description" content="Hexo+github搭建个人免费博客">
-<meta property="og:updated_time" content="2017-03-20T11:41:21.000Z">
+<meta property="og:updated_time" content="2017-03-20T12:45:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+github搭建个人免费博客">
 <meta name="twitter:description" content="Hexo+github搭建个人免费博客">
@@ -208,7 +208,8 @@
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"># 网站相关信息</div><div class="line">title: inerdstack	#博客名称</div><div class="line">subtitle: the stack of it nerds #副标题</div><div class="line">description: start from zero #简介</div><div class="line">author: inerdstack #作者</div><div class="line">language: zh-CN #语言</div><div class="line">timezone: Asia/Shanghai #时区</div><div class="line"></div><div class="line">#发布设置</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/iNerdStack/inerdstack.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 <h3 id="更新于20170320"><a href="#更新于20170320" class="headerlink" title="更新于20170320"></a>更新于20170320</h3><ul>
-<li>主题推荐及使用<ul>
+<li><p>主题推荐及使用</p>
+<ul>
 <li>本博客使用的是yilia主题，Yilia 是为 hexo 2.4+制作的主题。 崇尚简约优雅，以及极致的性能。</li>
 <li>使用<ul>
 <li><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</code></li>
@@ -221,6 +222,18 @@
 </ul>
 </li>
 </ul>
+</li>
+<li><p>添加多说评论</p>
+<ol>
+<li><p>_config.yml中添加多说的配置(注意：_config.yml在根目录和主题根目录都会存在，主题目录下的文件信息将会覆盖根目录的文件信息)  </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">duoshuo: 你站点的short_name</div><div class="line">duoshuo_shortname: 你站点的short_name</div></pre></td></tr></table></figure>
+</li>
+<li><p>修改themes\landscape\layout_partial\article.ejs模板</p>
+<p> 把</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.disqus_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">    &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">      &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">    &lt;/div&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure>
+<p> 替换成</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;% if (!index &amp;&amp; post.comments &amp;&amp; config.duoshuo_shortname)&#123; %&gt;</div><div class="line">  &lt;section id=&quot;comments&quot;&gt;</div><div class="line">    &lt;!-- 多说评论框 start --&gt;</div><div class="line">    &lt;div class=&quot;ds-thread&quot; data-thread-key=&quot;&lt;%= post.layout %&gt;-&lt;%= post.slug %&gt;&quot; data-title=&quot;&lt;%= post.title %&gt;&quot; data-url=&quot;&lt;%= page.permalink %&gt;&quot;&gt;&lt;/div&gt;</div><div class="line">    &lt;!-- 多说评论框 end --&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 start (一个网页只需插入一次) --&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var duoshuoQuery = &#123;short_name:&apos;&lt;%= config.duoshuo_shortname %&gt;&apos;&#125;;</div><div class="line">      (function() &#123;</div><div class="line">        var ds = document.createElement(&apos;script&apos;);</div><div class="line">        ds.type = &apos;text/javascript&apos;;</div><div class="line">        ds.async = true;</div><div class="line">        ds.src = (document.location.protocol == &apos;https:&apos; ? &apos;https:&apos; : &apos;http:&apos;) + &apos;//static.duoshuo.com/embed.js&apos;;</div><div class="line">        ds.charset = &apos;UTF-8&apos;;</div><div class="line">        (document.getElementsByTagName(&apos;head&apos;)[0] </div><div class="line">         || document.getElementsByTagName(&apos;body&apos;)[0]).appendChild(ds);</div><div class="line">      &#125;)();</div><div class="line">      &lt;/script&gt;</div><div class="line">    &lt;!-- 多说公共JS代码 end --&gt;</div><div class="line">  &lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></li>
+</ol>
 </li>
 </ul>
 
@@ -350,7 +363,25 @@
 
 
   
-    <div class="duoshuo"></div>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Hexo-github搭建个人免费博客" data-title="Hexo+github搭建个人免费博客" data-url="https://lindongxiao.github.io/2017/03/18/Hexo-github搭建个人免费博客/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lindongxiao"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
 
