@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lindongxiao.github.io">
-  <title>Tag: Github | 小楼昨夜好大风的博客</title>
+  <title>debian-LNMP环境搭建 | 小楼昨夜好大风的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="林东晓的博客，小楼昨夜好大风的博客,后端,前端,php,mysql,linux,nginx,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小楼昨夜好大风的博客">
-<meta property="og:url" content="https://lindongxiao.github.io/tags/Github/index.html">
+  <meta name="description" content="LNMP环境搭建、Debian、Linux、Nginx、PHP、Mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="debian-LNMP环境搭建">
+<meta property="og:url" content="https://lindongxiao.github.io/2017/04/11/debian-LNMP环境搭建/index.html">
 <meta property="og:site_name" content="小楼昨夜好大风的博客">
-<meta property="og:description" content="林东晓的博客，小楼昨夜好大风的博客,后端,前端,php,mysql,linux,nginx,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:description" content="LNMP环境搭建、Debian、Linux、Nginx、PHP、Mysql">
+<meta property="og:updated_time" content="2017-04-11T16:07:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小楼昨夜好大风的博客">
-<meta name="twitter:description" content="林东晓的博客，小楼昨夜好大风的博客,后端,前端,php,mysql,linux,nginx,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta name="twitter:title" content="debian-LNMP环境搭建">
+<meta name="twitter:description" content="LNMP环境搭建、Debian、Linux、Nginx、PHP、Mysql">
   
     <link rel="alternative" href="/atom.xml" title="小楼昨夜好大风的博客" type="application/atom+xml">
   
@@ -158,56 +159,101 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-debian-LNMP环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/18/Hexo-github搭建个人免费博客/" class="archive-article-date">
-  	<time datetime="2017-03-18T11:21:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/18/Hexo-github搭建个人免费博客/">Hexo+github搭建个人免费博客</a>
+    <h1 class="article-title" itemprop="name">
+      debian-LNMP环境搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/04/11/debian-LNMP环境搭建/" class="archive-article-date">
+  	<time datetime="2017-04-11T15:42:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>本文是在VM虚拟机下面装的Debian系统下安装LNMP，使用apt工具安装<br><a id="more"></a></p>
+<h3 id="添加debian第三方apt-get源"><a href="#添加debian第三方apt-get源" class="headerlink" title="添加debian第三方apt-get源"></a>添加debian第三方apt-get源</h3><p>这里使用的是网易和阿里的源，编辑文件/etc/apt/sources.list，把下面的源添加进去  </p>
+<ul>
+<li>网易 163源<br>deb <a href="http://mirrors.163.com/debian" target="_blank" rel="external">http://mirrors.163.com/debian</a> jessie main non-free contrib<br>deb <a href="http://mirrors.163.com/debian" target="_blank" rel="external">http://mirrors.163.com/debian</a> jessie-proposed-updates main contrib non-free<br>deb-src <a href="http://mirrors.163.com/debian" target="_blank" rel="external">http://mirrors.163.com/debian</a> jessie main non-free contrib<br>deb-src <a href="http://mirrors.163.com/debian" target="_blank" rel="external">http://mirrors.163.com/debian</a> jessie-proposed-updates main contrib non-free</li>
+<li>阿里源<br>deb <a href="http://mirrors.163.com/debian-security" target="_blank" rel="external">http://mirrors.163.com/debian-security</a> jessie/updates main contrib non-free<br>deb-src <a href="http://mirrors.163.com/debian-security" target="_blank" rel="external">http://mirrors.163.com/debian-security</a> jessie/updates main contrib non-free<br>deb <a href="http://mirrors.aliyun.com/debian" target="_blank" rel="external">http://mirrors.aliyun.com/debian</a> jessie main non-free contrib<br>deb <a href="http://mirrors.aliyun.com/debian" target="_blank" rel="external">http://mirrors.aliyun.com/debian</a> jessie-proposed-updates main non-free contrib<br>deb-src <a href="http://mirrors.aliyun.com/debian" target="_blank" rel="external">http://mirrors.aliyun.com/debian</a> jessie main non-free contrib<br>deb-src <a href="http://mirrors.aliyun.com/debian" target="_blank" rel="external">http://mirrors.aliyun.com/debian</a> jessie-proposed-updates main non-free contrib</li>
+</ul>
+<p>添加源之后执行以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get update #更新系统</div><div class="line">apt-get upgrade #更新软件包</div><div class="line">apt-get install vim #安装vim编辑器（习惯使用vim，这里可以跳过）</div></pre></td></tr></table></figure>
+<p>由于是在虚拟机里面安装的系统，为了方便操作，先安装SSH服务器，用于secureCRT远程连接操作<br><code>apt-get install openssh-server</code></p>
+<h3 id="配置网络"><a href="#配置网络" class="headerlink" title="配置网络"></a>配置网络</h3><p><code>vim /etc/network/interfaces #编辑interface</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auto lo      </div><div class="line">iface lo inet loopback</div><div class="line"></div><div class="line">auto eth0     #开机自动激活</div><div class="line">iface eth0 inet static   #静态IP</div><div class="line">address 192.168.1.10     #本机IP</div><div class="line">netmask 255.255.255.0     #子网掩码</div><div class="line">gateway 192.168.1.1            #路由网关</div></pre></td></tr></table></figure>
+<p><code>/etc/init.d/networking restart   #重启网卡</code></p>
+<h3 id="安装chkconfig"><a href="#安装chkconfig" class="headerlink" title="安装chkconfig"></a>安装chkconfig</h3><p>安装chkconfig，可以用来检查、设置系统的各种服务，设置开启启动<br><code>apt-get install chkconfig</code></p>
+<h3 id="修改时区"><a href="#修改时区" class="headerlink" title="修改时区"></a>修改时区</h3><p><code>dpkg-reconfigure tzdata</code></p>
+<h3 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">apt-get install nginx  #安装nginx</div><div class="line">service nginx start     #启动nginx</div><div class="line">chkconfig nginx on</div></pre></td></tr></table></figure>
+<h3 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">apt-get install  mysql-server #安装mysql，根据提示输入y安装，安装过程中，会跳出输入root密码的界面输入2次密码，继续自动安装</div><div class="line"></div><div class="line">chkconfig mysql on #开机启动</div><div class="line"></div><div class="line">service mysql restart #重启mysql</div></pre></td></tr></table></figure>
+<h3 id="安装phpPHP以及组件，使PHP支持-MySQL、FastCGI模式"><a href="#安装phpPHP以及组件，使PHP支持-MySQL、FastCGI模式" class="headerlink" title="安装phpPHP以及组件，使PHP支持 MySQL、FastCGI模式"></a>安装phpPHP以及组件，使PHP支持 MySQL、FastCGI模式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">apt-get install php5-fpm php5-cgi php5-cli php5-curl php5-mysql php5-gd libjpeg8-dev php5-imap php5-ldap php5-odbc php*-pear  php5-mcrypt  php5-mhash libmcrypt* libmcrypt-dev php5-common php5-idn php5-imagick php5-memcache  php5-ming php5-ps php5-pspell php5-recode php5-snmp php5-sqlite php5-tidy php5-xmlrpc php5-xsl php5-json php5-suhosin php-apc php5-dev #安装</div><div class="line"></div><div class="line">/etc/init.d/php5-fpm start   #启动php5-fpm</div><div class="line"></div><div class="line">chkconfig php5-fpm on   #设置开机启动php5-fpm</div><div class="line"></div><div class="line">/etc/init.d/mysql restart  #重启mysql</div><div class="line"></div><div class="line">/etc/init.d/nginx restart #重启nginx</div><div class="line"></div><div class="line">ln -s /etc/php5/fpm/php.ini  /etc/php.ini #把php配置文件链接到系统默认位置</div><div class="line"></div><div class="line">chown www-data.www-data -R  /usr/share/nginx/www/ -R  #设置目录所有者</div><div class="line"></div><div class="line">chmod 700  /usr/share/nginx/www/ -R   #设置目录权限</div></pre></td></tr></table></figure>
+<p>###备注<br>nginx默认站点目录是：/usr/share/nginx/www/<br>权限设置：chown www-data.www-data -R  /usr/share/nginx/www/ -R<br>MySQL数据库目录是：/var/lib/mysql<br>权限设置：chown mysql.mysql -R  /var/lib/mysql</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">环境搭建</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Github</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">博客</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">PHP</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Mysql</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -220,17 +266,104 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://lindongxiao.github.io/2017/04/11/debian-LNMP环境搭建/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/03/21/HTTP协议/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HTTP协议详解</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="debian-LNMP环境搭建" data-title="debian-LNMP环境搭建" data-url="https://lindongxiao.github.io/2017/04/11/debian-LNMP环境搭建/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"lindongxiao"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-    
+
 
 
           </div>
@@ -253,9 +386,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
