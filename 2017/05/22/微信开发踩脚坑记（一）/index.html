@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lindongxiao.github.io">
-  <title>微信调试工具-NATAPP | 小楼昨夜好大风的博客</title>
+  <title>微信开发踩脚坑记（一） | 小楼昨夜好大风的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="微信开发、微信调试、本地调试、NATAPP、Wechat">
+  <meta name="description" content="微信开发、踩坑、Wechat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信调试工具-NATAPP">
-<meta property="og:url" content="https://lindongxiao.github.io/2017/04/19/微信调试工具NATAPP/index.html">
+<meta property="og:title" content="微信开发踩脚坑记（一）">
+<meta property="og:url" content="https://lindongxiao.github.io/2017/05/22/微信开发踩脚坑记（一）/index.html">
 <meta property="og:site_name" content="小楼昨夜好大风的博客">
-<meta property="og:description" content="微信开发、微信调试、本地调试、NATAPP、Wechat">
-<meta property="og:updated_time" content="2017-04-19T15:52:14.000Z">
+<meta property="og:description" content="微信开发、踩坑、Wechat">
+<meta property="og:updated_time" content="2017-05-22T15:01:01.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信调试工具-NATAPP">
-<meta name="twitter:description" content="微信开发、微信调试、本地调试、NATAPP、Wechat">
+<meta name="twitter:title" content="微信开发踩脚坑记（一）">
+<meta name="twitter:description" content="微信开发、踩坑、Wechat">
   
     <link rel="alternative" href="/atom.xml" title="小楼昨夜好大风的博客" type="application/atom+xml">
   
@@ -159,37 +159,40 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-微信调试工具NATAPP" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-微信开发踩脚坑记（一）" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      微信调试工具-NATAPP
+      微信开发踩脚坑记（一）
     </h1>
   
 
         
-        <a href="/2017/04/19/微信调试工具NATAPP/" class="archive-article-date">
-  	<time datetime="2017-04-19T15:04:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
+        <a href="/2017/05/22/微信开发踩脚坑记（一）/" class="archive-article-date">
+  	<time datetime="2017-05-22T13:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>由于QQ浏览器自带的微信调试插件已经停止维护了，所以打算换另一种方式进行微信开发的调试，本文将介绍如何使用NATAPP在本地进行微信调试<br><a id="more"></a></p>
-<h3 id="NATAPP"><a href="#NATAPP" class="headerlink" title="NATAPP"></a>NATAPP</h3><p>natapp 基于ngrok的反向代理软件，通过在公网和本地运行的 Web 服务器之间建立一个安全的通道。natapp 可捕获和分析所有通道上的流量，便于后期分析和重放.</p>
+        <p>关于微信开发遇到的一些奇奇怪怪的问题以及解决方法。<br><a id="more"></a></p>
+<h3 id="微信支付"><a href="#微信支付" class="headerlink" title="微信支付"></a>微信支付</h3><p>只要有支付相关的需求，微信支付必定是首选之一了，所以我们需要开发微信支付相关的功能；<br>微信支付其实里面的坑也是蛮多的，其中，一个印象比较深刻的例子。</p>
 <ul>
-<li><p>安装<br>可到 <a href="https://natapp.cn/" target="_blank" rel="external">NATAPP官网</a> 根据自己的操作系统来进行下载安装，这里我们使用的是Windows的客户端</p>
-</li>
-<li><p>使用<br>首先是注册账号，登录之后点击购买隧道，在这里我们只是进行微信本地开发的作用，购买免费隧道即可。（之前由于微信自身的原因，免费隧道不可用，所以买了一个5块钱的vip隧道- -！，今天发现免费隧道能用了，所以推荐用免费隧道，使用起来没有什么区别）<br>购买隧道后，点击我的隧道可看到所购买的隧道，然后进行相关配置，我们把 <strong>关闭Web管理界面,优化性能</strong> 这个选项的钩去掉，然后可以根据下面给出的地址访问即可抓取相关数据<br>把下载好的压缩包解压，在命令行上输入 <code>natapp -authtoken=xxx</code> xxx为你的authtoken（可在我的隧道那里找到）这样我们就运行完成啦 <a href="https://natapp.cn/article/natapp_newbie" target="_blank" rel="external">官方教程传送门</a></p>
-</li>
-<li><p>配置微信测试公众号<br>我们可以登录微信公众平台的测试号管理页面进行相关的配置 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="external">微信公众平台传送门</a> 在这里，我们只需要把相关的appid、appsecret替换到你的代码中，把接口配置信息填写完毕即可～ 这样就大功告成啦，赶紧试试吧</p>
-</li>
+<li>例子：</li>
 </ul>
-<p>注意： 填写微信配置信息的时候，有可能会提示配置失败，请先检查你的url是否正确，代码是否正确，以及appid等相关信息是否填写正确。如果以上都没问题，多点几遍提交，然后不管有没有配置成功，都试着去扫下面的测试账号二维码进行关注，看看web管理页面是否抓取到了数据，如果成功接收到数据并且没有其他错误，说明已经配置成功啦（不知道什么原因，我这里进行配置的时候老是提示失败，多点几次就可以了）</p>
+<p>有一次客户反馈给我说微信支付用不了了，但是我这边通过正常方式打开支付页面是可以支付的，可是客户那边说就是支付不了；通过一系列的排查得知，原来跟最近我们产品加入的新功能有关系。最近加入了一个第三方公众号接入的功能，可以生成一些商品购买地址，让客户可以通过自己的公众号传播出去，而出问题的这位客户，就是通过他自己的公众号，把我们生成的地址放到了他的一篇文章，然后发送了出去；通过该文章点击进来的所有用户都将支付不了。</p>
+<ul>
+<li>原因：</li>
+</ul>
+<p>微信不允许跨号支付；由于普通微信订阅号不支持支付功能，只有服务号才有，所有在订阅号中打开的商品，或出现跨号错误的提示，而上面的例子中的客户的公众号是订阅号，所以出现了这种问题；但是，经过测试发现，该问题只存在于安卓，IOS可以支付（这就尴尬了- -）  </p>
+<ul>
+<li>解决方法：</li>
+</ul>
+<p>我们可以使用微信支付二维码来解决这个难题，试用其他产品发现也都是通过这种方式去实现的；但是生成二维码之后又遇到一个问题。。。（真是一环接一环啊）长按识别二维码之后提示“支付失败，该商户暂不支持通过长按识别二维码完成支付”。。。（一万只草泥马奔腾而过）<br>听说可以联系微信那边申请开通这个权限，但是我没试过，因为打了几次客服电话没人接，郁闷。所以又从网上找到另外一种临时解决方法。打开支付二维码后，另存为图片，然后到微信扫一扫，点击相册，选中刚才保存的二维码，然后就可以支付了0.0   坑爹。。  目前只能通过这种方法解决，如果有更好的方法，麻烦通过评论告知一声～ 谢谢啦～</p>
 
       
 
@@ -224,11 +227,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">微信开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">坑</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">调试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">微信开发</a>
         		</li>
       		
 		</ul>
@@ -295,7 +298,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://lindongxiao.github.io/2017/04/19/微信调试工具NATAPP/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://lindongxiao.github.io/2017/05/22/微信开发踩脚坑记（一）/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,18 +312,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/05/22/微信开发踩脚坑记（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          微信开发踩脚坑记（一）
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/04/11/debian-LNMP环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Debian-LNMP环境搭建</div>
+    <a href="/2017/04/19/微信调试工具NATAPP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">微信调试工具-NATAPP</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -334,7 +328,7 @@ var _hmt = _hmt || [];
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="微信调试工具NATAPP" data-title="微信调试工具-NATAPP" data-url="https://lindongxiao.github.io/2017/04/19/微信调试工具NATAPP/"></div>
+	<div class="ds-thread" data-thread-key="微信开发踩脚坑记（一）" data-title="微信开发踩脚坑记（一）" data-url="https://lindongxiao.github.io/2017/05/22/微信开发踩脚坑记（一）/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

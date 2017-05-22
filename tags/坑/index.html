@@ -6,18 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lindongxiao.github.io">
-  <title>微信调试工具-NATAPP | 小楼昨夜好大风的博客</title>
+  <title>Tag: 坑 | 小楼昨夜好大风的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="微信开发、微信调试、本地调试、NATAPP、Wechat">
-<meta property="og:type" content="article">
-<meta property="og:title" content="微信调试工具-NATAPP">
-<meta property="og:url" content="https://lindongxiao.github.io/2017/04/19/微信调试工具NATAPP/index.html">
+  <meta name="description" content="林东晓的博客，小楼昨夜好大风的博客,后端,前端,php,mysql,linux,nginx,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小楼昨夜好大风的博客">
+<meta property="og:url" content="https://lindongxiao.github.io/tags/坑/index.html">
 <meta property="og:site_name" content="小楼昨夜好大风的博客">
-<meta property="og:description" content="微信开发、微信调试、本地调试、NATAPP、Wechat">
-<meta property="og:updated_time" content="2017-04-19T15:52:14.000Z">
+<meta property="og:description" content="林东晓的博客，小楼昨夜好大风的博客,后端,前端,php,mysql,linux,nginx,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信调试工具-NATAPP">
-<meta name="twitter:description" content="微信开发、微信调试、本地调试、NATAPP、Wechat">
+<meta name="twitter:title" content="小楼昨夜好大风的博客">
+<meta name="twitter:description" content="林东晓的博客，小楼昨夜好大风的博客,后端,前端,php,mysql,linux,nginx,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
   
     <link rel="alternative" href="/atom.xml" title="小楼昨夜好大风的博客" type="application/atom+xml">
   
@@ -159,82 +158,52 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-微信调试工具NATAPP" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      微信调试工具-NATAPP
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/05/22/微信开发踩脚坑记（一）/" class="archive-article-date">
+  	<time datetime="2017-05-22T13:58:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-22</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/05/22/微信开发踩脚坑记（一）/">微信开发踩脚坑记（一）</a>
     </h1>
   
 
-        
-        <a href="/2017/04/19/微信调试工具NATAPP/" class="archive-article-date">
-  	<time datetime="2017-04-19T15:04:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>由于QQ浏览器自带的微信调试插件已经停止维护了，所以打算换另一种方式进行微信开发的调试，本文将介绍如何使用NATAPP在本地进行微信调试<br><a id="more"></a></p>
-<h3 id="NATAPP"><a href="#NATAPP" class="headerlink" title="NATAPP"></a>NATAPP</h3><p>natapp 基于ngrok的反向代理软件，通过在公网和本地运行的 Web 服务器之间建立一个安全的通道。natapp 可捕获和分析所有通道上的流量，便于后期分析和重放.</p>
-<ul>
-<li><p>安装<br>可到 <a href="https://natapp.cn/" target="_blank" rel="external">NATAPP官网</a> 根据自己的操作系统来进行下载安装，这里我们使用的是Windows的客户端</p>
-</li>
-<li><p>使用<br>首先是注册账号，登录之后点击购买隧道，在这里我们只是进行微信本地开发的作用，购买免费隧道即可。（之前由于微信自身的原因，免费隧道不可用，所以买了一个5块钱的vip隧道- -！，今天发现免费隧道能用了，所以推荐用免费隧道，使用起来没有什么区别）<br>购买隧道后，点击我的隧道可看到所购买的隧道，然后进行相关配置，我们把 <strong>关闭Web管理界面,优化性能</strong> 这个选项的钩去掉，然后可以根据下面给出的地址访问即可抓取相关数据<br>把下载好的压缩包解压，在命令行上输入 <code>natapp -authtoken=xxx</code> xxx为你的authtoken（可在我的隧道那里找到）这样我们就运行完成啦 <a href="https://natapp.cn/article/natapp_newbie" target="_blank" rel="external">官方教程传送门</a></p>
-</li>
-<li><p>配置微信测试公众号<br>我们可以登录微信公众平台的测试号管理页面进行相关的配置 <a href="https://mp.weixin.qq.com/debug/cgi-bin/sandbox?t=sandbox/login" target="_blank" rel="external">微信公众平台传送门</a> 在这里，我们只需要把相关的appid、appsecret替换到你的代码中，把接口配置信息填写完毕即可～ 这样就大功告成啦，赶紧试试吧</p>
-</li>
-</ul>
-<p>注意： 填写微信配置信息的时候，有可能会提示配置失败，请先检查你的url是否正确，代码是否正确，以及appid等相关信息是否填写正确。如果以上都没问题，多点几遍提交，然后不管有没有配置成功，都试着去扫下面的测试账号二维码进行关注，看看web管理页面是否抓取到了数据，如果成功接收到数据并且没有其他错误，说明已经配置成功啦（不知道什么原因，我这里进行配置的时候老是提示失败，多点几次就可以了）</p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>感谢支持！<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">微信开发</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">坑</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">调试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">微信开发</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -247,113 +216,17 @@ var _hmt = _hmt || [];
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://lindongxiao.github.io/2017/04/19/微信调试工具NATAPP/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/05/22/微信开发踩脚坑记（一）/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          微信开发踩脚坑记（一）
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/04/11/debian-LNMP环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Debian-LNMP环境搭建</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-
-  
-  <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="微信调试工具NATAPP" data-title="微信调试工具-NATAPP" data-url="https://lindongxiao.github.io/2017/04/19/微信调试工具NATAPP/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"lindongxiao"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
+    </div></section>
   
 
-
+    
 
 
           </div>
@@ -376,9 +249,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
